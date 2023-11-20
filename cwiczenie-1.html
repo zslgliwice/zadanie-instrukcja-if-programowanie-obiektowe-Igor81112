@@ -12,7 +12,7 @@
 <body>
 
 	<label>
-		Podaj numer dnia tygodnia: <input type="number">
+		Podaj numer dnia tygodnia: <input type="number" id="week">
 	</label>
 	
 	<input type="submit" value="Zobacz nazwę dnia" onclick="getDayName()">
@@ -23,7 +23,31 @@
 	
 		function getDayName()
 		{
-					
+			var dzien = document.getElementById("week").value;
+			if (dzien == 1){
+				document.getElementById("wynik").innerHTML = "Pierwszy dzień tygodnia to Monday - nienawidze poniedziałków";				
+			}else if(dzien == 2){
+				document.getElementById("wynik").innerHTML = "Drugi dzień tygodnia to Tuesday - wtorek (niechce mi się żyć)";
+			}else if(dzien == 3){
+				document.getElementById("wynik").innerHTML = "Trzeci dzień tygodnia to Wednesday - środa (niby środek tygodnia ale i tak niechce się)";
+			}else if(dzien == 4){
+				document.getElementById("wynik").innerHTML = "Czwarty dzień tygodnia to Thursday - czwartek (nareszcie końcówka)";
+			}else if(dzien == 5){
+				document.getElementById("wynik").innerHTML = "Piąty dzień tygodnia to Friday - piątek, piąteczek, piątunio (odbębnić pare godzin i fajrant)";
+				document.getElementById("wynik").style.color = "yellow";
+			}else if(dzien == 6){
+				document.getElementById("wynik").innerHTML = "Szósty dzień tygodnia to Saturday - sobota (ale mnie łeb boli)";
+				document.getElementById("wynik").style.color = "green";
+			}else if(dzien == 7){
+				document.getElementById("wynik").innerHTML = "Pierwszy dzień tygodnia to Sunday - niedziela (jutro szkoła)";
+				document.getElementById("wynik").style.color = "green";
+			}else if(dzien > 7){
+				document.getElementById("wynik").innerHTML = "To nie jest prawidłowy numer dnia tygodnia!";
+				document.getElementById("wynik").style.color = "red";
+			}else if(dzien < 1){
+				document.getElementById("wynik").innerHTML = "To nie jest prawidłowy numer dnia tygodnia!";
+				document.getElementById("wynik").style.color = "red";
+			}
 			
 		}
 
