@@ -23,14 +23,45 @@
 	
 		function matematyka()
 		{
-			var a = document.getElementById('a').value;
-			var b = document.getElementById('b').value;
-			var c = document.getElementById('c').value;
 			
-			
-		}
+					var a = parseFloat(document.getElementById("a").value);
+					var b = parseFloat(document.getElementById("b").value);
+					var c = parseFloat(document.getElementById("c").value);
+					
+		
+					if (isNaN(a) || isNaN(b) || isNaN(c)) {
+						document.getElementById("wynik").innerHTML = "Wprowadź poprawne wartości dla liczb a, b, c.";
+						return;
+					}
+					var najmniejsza = Math.min(a, b, c);
+		
+					var najwieksza = Math.max(a, b, c);
+					
+					var bezwzglednaA = Math.abs(a);
+           		    var bezwzglednaB = Math.abs(b);
+         	     	var bezwzglednaC = Math.abs(c);
+		
+				
+					var parzystaA = a % 2 === 0 ? "parzysta" : "nieparzysta";
+					var parzystaB = b % 2 === 0 ? "parzysta" : "nieparzysta";
+					var parzystaC = c % 2 === 0 ? "parzysta" : "nieparzysta";
+		
+					
+					document.getElementById("wynik").innerHTML = `
+					<p>Najmniejsza liczba: ${najmniejsza}</p>
+					<p>Największa liczba: ${najwieksza}</p>
+					<p>Wartość bezwzględna liczby a: ${bezwzglednaA}</p>
+					<p>Wartość bezwzględna liczby b: ${bezwzglednaB}</p>
+					<p>Wartość bezwzględna liczby c: ${bezwzglednaC}</p>
+					<p>Liczba a jest ${parzystaA}</p>
+					<p>Liczba b jest ${parzystaB}</p>
+					<p>Liczba c jest ${parzystaC}</p>
+				`;
+				}
+
 
 	</script>
+
 
 </body>
 </html>
