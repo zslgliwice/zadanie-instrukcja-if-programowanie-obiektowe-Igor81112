@@ -22,11 +22,26 @@
 	
 		function sprawdz()
 		{
+	    var imie = document.getElementById("imie").value;
+            var wiek = parseInt(document.getElementById("wiek").value);
+
 			
-			
+            if (wiek < 16) {
+                document.getElementById("wynik").innerHTML= "Nie możesz wziąć udziału w seansie.";
+            } else if (wiek >= 16 && wiek <= 17) {
+				document.getElementById("wynik").innerHTML = "Możesz wziąć udział w seansie, jeśli przyjdziesz z opiekunem. Cena biletu: 12 zł.";
+            } else if (wiek >= 18) {
+                if ((imie == "Brad" || imie == "Morgan") && wiek >= 18) { <!--nie wiem jak zrobić żeby brad i morgan działali z dużej litery--> 
+					document.getElementById("wynik").innerHTML = "Możesz wziąć udział w seansie za darmo! Cena biletu: 0 zł.";
+            } else {
+                    document.getElementById("wynik").innerHTML = "Możesz wziąć udział w seansie. Cena biletu: 18 zł.";
+				}
+            
+			}
 		}
 
 	</script>
+
 
 </body>
 </html>
