@@ -21,8 +21,34 @@
 	
 		function ktora_cwiartka()
 		{
-			
-			
+			var x = parseFloat(document.getElementById("x").value);
+            var y = parseFloat(document.getElementById("y").value);
+            
+
+            if (isNaN(x) || isNaN(y)) {
+                document.getElementById("wynik").innerHTML = "Wprowadź poprawne wartości dla współrzędnych.";
+                return;
+            }
+
+            if (x === 0 && y === 0) {
+                document.getElementById("wynik").innerHTML = "Punkt P=(0,0) jest początkiem układu współrzędnych.";
+            } else if (x === 0 || y === 0) {
+                document.getElementById("wynik").innerHTML = "Punkt leży na jednej z osi układu.";
+            } else {
+                var cwiartka =
+                    x > 0 && y > 0 ? "I ćwiartka" :
+                    x < 0 && y > 0 ? "II ćwiartka" :
+                    x < 0 && y < 0 ? "III ćwiartka" :
+                    x > 0 && y < 0 ? "IV ćwiartka" :
+                    "Punkt leży na osi.";
+
+					document.getElementById("wynik").innerHTML = "Punkt P=(" + x + "," + y + ") znajduje się w " + cwiartka + ".";
+            }
+
+           
+            if (x === 15 && y === 96) {
+                document.getElementById("wynik").innerHTML = "Kartezjusz był matematykiem i filozofem francuskim, uważanym za jednego z twórców filozofii nowożytnej.";
+			}	
 		}
 
 	</script>
